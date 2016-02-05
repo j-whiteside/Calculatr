@@ -204,20 +204,6 @@
                                             <action selector="operatorInputHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNR-g3-bB0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB1-YV-mIW" userLabel="clearDisplayButton">
-                                        <rect key="frame" x="8" y="6" width="178" height="94"/>
-                                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="94" id="asV-XH-d1N"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
-                                        <state key="normal" title="CLEAR">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clearDisplay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CdM-L0-xH3"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIz-Fz-nU2" userLabel="zeroButton">
                                         <rect key="frame" x="8" y="414" width="178" height="94"/>
                                         <color key="backgroundColor" white="0.69507004309999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -238,6 +224,20 @@
                                         </state>
                                         <connections>
                                             <action selector="operatorInputHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGF-y8-VoI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB1-YV-mIW" userLabel="clearDisplayButton">
+                                        <rect key="frame" x="8" y="6" width="178" height="94"/>
+                                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="94" id="asV-XH-d1N"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
+                                        <state key="normal" title="CLEAR">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearDisplay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CdM-L0-xH3"/>
                                         </connections>
                                     </button>
                                 </subviews>
