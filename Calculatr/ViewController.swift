@@ -7,6 +7,7 @@
 //  Copyright © 2016 Jeremy Whiteside. All rights reserved.
 //
 //  This app is a simple calculator app.  It allows you to add, subtract, divide, and multiply float or whole numbers.
+//  It also supports the use of negative numbers in equations.
 //
 //  I used a very simple layout for my calculator.  The colors are flat greyscale colors, with accented function keys (not numbers)
 //  The font used is Helvetica Neue
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
     var mostRecentInputDouble: Double = 0
     var arithmeticOperatorString = String()
     var firstNumberBoolean = true
+    var negativeNumberBoolean = false
     
     @IBOutlet weak var displayLabel: UILabel!
     
@@ -40,6 +42,7 @@ class ViewController: UIViewController {
         
         currentDisplayString = clearedDisplayString
         firstNumberBoolean = true
+        negativeNumberBoolean = false
         currentDisplayDouble = 0
         previousDisplayDouble = 0
         arithmeticOperatorString = ""
@@ -87,6 +90,28 @@ class ViewController: UIViewController {
         updateDisplay()
     }
     
+    @IBAction func negativeInputHandler(sender: AnyObject) {
+        //This function handles the negative/positive button.  If the number in the display is positive, it will add a minus symbol infront of it.
+        //If the number is already negative, it will remove the minus symbol
+        
+        //If there is no number on the display, it will not input a minus symbol
+        if firstNumberBoolean == false {
+            
+            //If the number displayed is positive
+            if negativeNumberBoolean == false{
+                currentDisplayString = "-" + currentDisplayString
+                negativeNumberBoolean = true
+            }
+                
+            //If the number is already negative
+            else{
+                currentDisplayString = String(currentDisplayString.stringByReplacingOccurrencesOfString("-", withString: ""))
+            }
+            
+            mostRecentInputDouble = Double(currentDisplayString)!
+        }
+        updateDisplay()
+    }
     
     @IBAction func operatorInputHandler(sender: AnyObject) {
         //This function handles the arithmetic operators, and the equals button.
@@ -96,6 +121,7 @@ class ViewController: UIViewController {
         if !(sender.titleLabel!!.text)!.containsString("="){
             previousDisplayDouble = Double(currentDisplayString)!
             arithmeticOperatorString = sender.titleLabel!!.text!
+            negativeNumberBoolean = false
         }
         
         //If the input is an equals sign
